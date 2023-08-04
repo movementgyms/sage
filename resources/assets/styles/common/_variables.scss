@@ -1,10 +1,139 @@
-/** Import Bootstrap functions */
-@import "~bootstrap/scss/functions";
+/** Box Model  */
+$spacer:                2rem;
 
-$theme-colors: (
-  primary: #525ddc
+$button-small-height:   3.5rem;
+$button-height:         4.5rem;
+
+/** Colors */
+$transparent:                       'transparent';
+$black:                             #000;
+$white:                             #fff;
+$darken-black:                      rgba(0, 0, 0, 0.15);
+$half-black:                        rgba(0, 0, 0, 0.5);
+$half-white:                        rgba(255, 255, 255, 0.5);
+$gray-dark:                         #5b6770;
+$gray-medium-dark:                  #929292;
+$gray-medium:                       #c1c6c8;
+$gray-separator:                    #aeaeae;
+$gray-light-accent:                 #b4b4b4;
+$gray-light:                        #e3e5e6;
+$blue-dark:                         #001f5b;
+$blue-light:                        #009ca6;
+$yellow-medium:                     #ede04b;
+$red-medium:                        #dd002b;
+$brand-primary-el-cap:              $blue-light;
+$brand-secondary-el-cap:            $blue-dark;
+$brand-tertiary-el-cap:             $gray-medium-dark;
+$brand-primary-movement:            #6daf3c;
+$brand-secondary-movement:          #616e7b;
+$brand-tertiary-movement:           #001f5b;
+$brand-primary-earth-treks:         #00205c;
+$brand-secondary-earth-treks:       #2eb4df;
+$brand-tertiary-earth-treks:        #616e7b;
+$brand-primary-planet-granite:      #1b97d4;
+$brand-secondary-planet-granite:    #114b95;
+$brand-tertiary-planet-granite:     #6d6d6e;
+$brand-primary-movement-combined:   #009ca6;
+$brand-secondary-movement-combined: #00205b;
+$brand-tertiary-movement-combined:  #00bb7e;
+
+$breakpoint-desktop-nav: 1200px;
+
+$colors: (
+  'transparent':        'transparent',
+  'black':              $black,
+  'white':              $white,
+  'darken-black':       $darken-black,
+  'half-black':         $half-black,
+  'half-white':         $half-white,
+  'gray-dark':          $gray-dark,
+  'gray-medium':        $gray-medium,
+  'gray-medium-dark':   $gray-medium-dark,
+  'gray-separator':     $gray-separator,
+  'gray-light-accent':  $gray-light-accent,
+  'gray-light':         $gray-light,
+  'blue-dark':          $blue-dark,
+  'blue-light':         $blue-light,
+  'yellow-medium':      $yellow-medium,
+  'red-medium':         $red-medium,
 );
 
-/** Bootstrap navbar fix (https://git.io/fADqW) */
-$navbar-dark-toggler-icon-bg: none;
-$navbar-light-toggler-icon-bg: none;
+$brand-colors: (
+  'movement-combined': (
+    'primary':          $brand-primary-movement-combined,
+    'secondary':        $brand-secondary-movement-combined,
+    'tertiary':         $brand-tertiary-movement-combined,
+  ),
+  'el-cap': (
+    'primary':          $brand-primary-el-cap,
+    'secondary':        $brand-secondary-el-cap,
+    'tertiary':         $brand-tertiary-el-cap,
+  ),
+  'movement': (
+    'primary':          $brand-primary-movement,
+    'secondary':        $brand-secondary-movement,
+    'tertiary':         $brand-tertiary-movement,
+  ),
+  'earth-treks': (
+    'primary':          $brand-primary-earth-treks,
+    'secondary':        $brand-secondary-earth-treks,
+    'tertiary':         $brand-tertiary-earth-treks,
+  ),
+  'planet-granite': (
+    'primary':          $brand-primary-planet-granite,
+    'secondary':        $brand-secondary-planet-granite,
+    'tertiary':         $brand-tertiary-planet-granite,
+  ),
+);
+
+/** Class Type Colors */
+$class-colors: (
+  'green':        #01bb7e,
+  'teal':         #27b5b8,
+  'blue':         #5192e3,
+  'tan':          #a79b95,
+  'orange':       #d18320,
+  'light-orange': #e0a518,
+  'brown':        #a78959
+);
+
+/* UIKit Variables */
+$global-font-family: montserrat, sans-serif;
+$global-font-size: 10px;
+$base-h1-line-height: 1;
+$base-h2-line-height: 1.2;
+$base-h3-line-height: 1.2;
+$base-h4-line-height: 1.5;
+$base-h5-line-height: 1.5;
+$base-h6-line-height: 1.5;
+$base-heading-margin-top: 0;
+$base-margin-vertical: 20px;
+$base-margin-horizontal: 20px;
+$base-body-background: $gray-light;
+$base-body-color: $blue-dark;
+$base-heading-color: $blue-dark;
+$base-heading-text-transform: lowercase;
+$base-link-hover-color: $blue-light;
+$padding-large-padding: 50px;
+$padding-large-padding-l: 100px;
+$base-blockquote-font-size: 16px;
+$base-blockquote-line-height: 1.5;
+$base-blockquote-font-style: normal;
+$base-blockquote-margin-vertical: 0;
+$global-gutter: 20px;
+$global-small-gutter: 15px;
+$global-medium-gutter: 20px;
+$global-large-gutter: 30px;
+$global-margin: 40px;
+$global-xsmall-margin: 8px;
+$global-small-margin: 20px;
+$global-medium-margin: 50px;
+$global-large-margin: 100px;
+$global-xlarge-margin: 120px;
+$subnav-margin-vertical: 5px;
+$subnav-margin-horizontal: 15px;
+$section-xsmall-padding-vertical: 20px;
+$accordion-title-color: inherit;
+$accordion-title-hover-color: inherit;
+$accordion-item-margin-top: 0;
+$accordion-content-margin-top: $global-small-margin / 2;

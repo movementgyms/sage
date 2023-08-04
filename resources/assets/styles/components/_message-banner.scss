@@ -1,0 +1,39 @@
+.message-banner {
+  &__alert {
+    display: none;
+  }
+
+  &__more {
+    display: none;
+  }
+
+  &__expanded {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $dropdown-z-index + 1;
+
+    .admin-bar & {
+      top: 32px;
+    }
+  }
+
+  &.message-banner-alert {
+    .message-banner__alert {
+      display: inline-block;
+    }
+
+    .message-banner__collapsed,
+    .message-banner__expanded {
+      background-color: $red-medium;
+    }
+  }
+
+  &.message-banner-has-content {
+    .message-banner__more {
+      display: inline-block;
+    }
+  }
+}

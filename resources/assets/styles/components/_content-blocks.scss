@@ -1,0 +1,5 @@
+.content-blocks {
+  > section:not([class*='bg-']):not(.bg-collapse):not(.content-blocks__separator) + section:not([class*='bg-']):not(.bg-collapse) {
+    padding-top: 0;
+  }
+}

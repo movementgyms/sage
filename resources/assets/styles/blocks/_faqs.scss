@@ -1,0 +1,17 @@
+.faqs {
+  li {
+    border-top: 1px solid $gray-light;
+    padding-top: $padding-small-padding;
+    padding-bottom: $padding-small-padding;
+
+    &:last-child {
+      border-bottom: 1px solid $gray-light;
+    }
+
+    &.uk-open {
+      .cta-block-plus::after {
+        content: $icomoon-minus;
+      }
+    }
+  }
+}

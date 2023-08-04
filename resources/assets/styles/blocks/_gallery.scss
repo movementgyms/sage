@@ -1,0 +1,54 @@
+.gallery {
+  $padding: 65vh;
+
+  position: relative;
+
+  &__image {
+    padding-top: $padding;
+  }
+
+  &__info {
+    position: absolute;
+    top: $padding;
+    transform: translateY(calc(-100% - #{$padding-padding}));
+  }
+
+  &__floating-controls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: calc(#{$padding / -2} + #{$padding-padding});
+    width: calc(120% + #{$padding-small-padding * 2} + 1px);
+    margin-left: calc(#{percentage(-1 / 10)} - #{$padding-small-padding});
+  }
+
+  @media screen and (min-width: $breakpoint-small) {
+    &__floating-controls {
+      position: relative;
+      top: auto;
+      width: auto;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-medium) {
+    $padding: 50%;
+
+    &__image {
+      padding-top: $padding;
+    }
+
+    &__info {
+      position: absolute;
+      top: 0;
+      margin-top: $padding;
+      width: 100%;
+      transform: translateY(calc(-100% + #{$padding-padding}));
+    }
+
+    &__caption {
+      padding-top: #{$padding-padding};
+    }
+  }
+}

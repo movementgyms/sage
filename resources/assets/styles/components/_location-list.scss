@@ -1,0 +1,11 @@
+.location-list {
+  &__item {
+    &__image {
+      @media screen and (max-width: $breakpoint-medium-max) {
+        max-height: 400px;
+        overflow: hidden;
+        align-items: center;
+      }
+    }
+  }
+}

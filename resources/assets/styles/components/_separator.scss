@@ -1,0 +1,53 @@
+@mixin separator-line-small {
+  position: relative;
+  margin-bottom: 0;
+
+  &::after {
+    content: '';
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 0.1rem;
+    width: 2.5rem;
+    background-color: $blue-dark;
+  }
+}
+
+@mixin separator-line-medium {
+  position: relative;
+  margin-bottom: 0;
+
+  &::after {
+    content: '';
+    position: relative;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 0.2rem;
+    width: 2rem;
+    background-color: $blue-dark;
+  }
+}
+
+.separator-line-small {
+  @include separator-line-small;
+
+  &.separator-centered {
+    &::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.separator-line-medium {
+  @include separator-line-medium;
+
+  &.separator-centered {
+    &::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

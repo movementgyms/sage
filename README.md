@@ -118,3 +118,6 @@ Keep track of development and community news.
 * Read and subscribe to the [Roots Blog](https://roots.io/blog/)
 * Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
 * Listen to the [Roots Radio podcast](https://roots.io/podcast/)
+
+## To add a new site to sync
+Update _wordpress_multisite_has_not_changed_site variables in post_meta to 0

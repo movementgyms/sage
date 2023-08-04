@@ -1,7 +1,29 @@
-.banner .nav li {
-  @extend .nav-item;
+header.banner {
+  position: relative;
 }
 
-.banner .nav a {
-  @extend .nav-link;
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+
+  .header-logo-link {
+    margin-right: auto;
+    padding-top: $padding-padding * 1.25;
+    padding-bottom: $padding-padding * 1.25;
+  }
+
+  .header-logo {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    height: 4.25rem;
+    width: auto;
+  }
+
+  body.has-location-selected & {
+    justify-content: space-between;
+
+    .header-logo-link {
+      margin-right: 0;
+    }
+  }
 }

@@ -1,0 +1,100 @@
+@mixin brand-primary($property) {
+  @each $brand-name, $colors in $brand-colors {
+    body.#{$brand-name} & {
+      #{$property}: map-get($colors, 'primary');
+    }
+  }
+}
+
+@each $color-name, $color in $colors {
+  .bg-#{$color-name} {
+    background-color: $color;
+  }
+
+  .color-#{$color-name} {
+    color: $color !important;
+    fill: $color !important;
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color;
+    }
+
+    &[class*='overline-'],
+    *[class*='overline-'],
+    &[class~='hover-underline'],
+    *[class~='hover-underline'] {
+      &::after {
+        background-color: $color;
+      }
+    }
+  }
+
+  .hover-color-#{$color-name} {
+    transition: all $transition-duration;
+
+    &:hover {
+      color: $color !important;
+      fill: $color !important;
+    }
+  }
+
+  .border-color-#{$color-name} {
+    border-color: $color;
+  }
+}
+
+@each $brand-name, $colors in $brand-colors {
+  @each $color-tier, $color in $colors {
+    body.#{$brand-name} {
+      .bg-brand-#{$color-tier} {
+        background-color: $color;
+      }
+
+      .color-brand-#{$color-tier} {
+        color: $color !important;
+        fill: $color !important;
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: $color;
+        }
+      }
+
+      .hover-color-brand-#{$color-tier} {
+        transition: all $transition-duration;
+
+        &:hover {
+          color: $color !important;
+          fill: $color !important;
+        }
+      }
+
+      .border-color-brand-#{$color-tier} {
+        border-color: $color;
+      }
+    }
+  }
+}
+
+@each $color-name, $color in $class-colors {
+  .class-type-border-color-#{$color-name} {
+    border-color: $color;
+  }
+}
+
+body.movement-combined .bg-brand-secondary {
+  &.color-white .content-wp a:not([class]) {
+    color: $yellow-medium;
+  }
+}

@@ -1,0 +1,16 @@
+.time-list {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding-left: 0;
+
+  li,
+  time {
+    display: contents;
+    text-align: left !important;
+  }
+
+  time > *:first-child {
+    padding-right: $padding-small-padding;
+  }
+}

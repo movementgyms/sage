@@ -1,0 +1,35 @@
+
+@mixin hover-underline-color($color) {
+  &::after {
+    background-color: $color;
+  }
+}
+
+@mixin hover-underline {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 0.2rem;
+    width: 100%;
+    transform: translateX(-50%) scale(0, 1);
+    transition: all $transition-duration;
+    background-color: $base-body-color;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &::after {
+      transform: translateX(-50%) scale(1, 1);
+    }
+  }
+}
+
+.hover-underline {
+  @include hover-underline;
+}

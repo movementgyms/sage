@@ -1,0 +1,49 @@
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  transition: color $transition-duration;
+}
+
+a:not([class])[href^='mailto:'] {
+  color: $blue-dark;
+
+  &,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: $base-link-hover-color;
+  }
+}
+
+a:not([class])[href^='tel:'] {
+  color: $blue-dark;
+
+  &:hover {
+    color: $base-link-hover-color;
+  }
+}
+
+.color-white {
+  .content-wp a:not([class]) {
+    color: $blue-dark;
+
+    &:hover {
+      color: $yellow-medium;
+    }
+  }
+}
+
+.bg-blue-dark,
+body.earth-treks .bg-brand-primary {
+  .content-wp a:not([class]) {
+    color: $yellow-medium;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

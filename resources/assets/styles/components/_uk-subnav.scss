@@ -1,0 +1,35 @@
+.uk-subnav {
+  > li {
+    @include text-label-small;
+    @include text-upper;
+
+    padding: $subnav-margin-vertical $subnav-margin-horizontal;
+
+    > :first-child {
+      color: $white;
+    }
+
+    &.uk-active {
+      background-color: $white;
+
+      > :first-child {
+        color: $blue-dark;
+      }
+    }
+
+    &:not(.uk-active) {
+      a {
+        @include hover-underline;
+        @include hover-underline-color($white);
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-medium - 1px) {
+    margin-left: 0;
+  }
+}

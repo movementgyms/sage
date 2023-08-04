@@ -1,0 +1,99 @@
+// 1. Your custom variables and variable overwrites.
+
+// 2. Import default variables and available mixins.
+@import '~uikit/src/scss/variables.scss';
+@import '~uikit/src/scss/mixins.scss';
+
+// 3. Your custom mixin overwrites.
+// @mixin hook-section {}
+
+// 4. Import UIkit.
+@import '~uikit/src/scss/uikit.scss';
+
+.uk-padding-medium {
+  padding: 50px;
+}
+
+.uk-padding-remove-first-child {
+  > *:first-child {
+    padding-top: 0;
+  }
+}
+
+.uk-padding-remove-last-child {
+  > *:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.uk-margin-xsmall-top {
+  margin-top: $global-xsmall-margin;
+}
+
+.uk-margin-xsmall-bottom {
+  margin-bottom: $global-xsmall-margin;
+}
+
+.uk-flex-grow {
+  flex-grow: 1;
+}
+
+// Add uikit classes that don't
+@media (min-width: $breakpoint-small) {
+  // Margin
+  .uk-margin-remove-top\@s { margin-top: 0 !important; }
+  .uk-margin-remove-bottom\@s { margin-bottom: 0 !important; }
+
+  // Direction
+  .uk-flex-row\@s { flex-direction: row; }
+  .uk-flex-row-reverse\@s { flex-direction: row-reverse; }
+  .uk-flex-column\@s { flex-direction: column; }
+  .uk-flex-column-reverse\@s { flex-direction: column-reverse; }
+  .uk-flex-middle\@s { align-items: center; }
+  .uk-flex-left\@s { justify-content: flex-start; }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) {
+  // Margin
+  .uk-margin-remove-top\@m { margin-top: 0 !important; }
+  .uk-margin-remove-bottom\@m { margin-bottom: 0 !important; }
+
+  // Direction
+  .uk-flex-row\@m { flex-direction: row; }
+  .uk-flex-row-reverse\@m { flex-direction: row-reverse; }
+  .uk-flex-column\@m { flex-direction: column; }
+  .uk-flex-column-reverse\@m { flex-direction: column-reverse; }
+  .uk-flex-middle\@m { align-items: center; }
+  .uk-flex-left\@m { justify-content: flex-start; }
+}
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large) {
+  // Margin
+  .uk-margin-remove-top\@l { margin-top: 0 !important; }
+  .uk-margin-remove-bottom\@l { margin-bottom: 0 !important; }
+
+  // Direction
+  .uk-flex-row\@l { flex-direction: row; }
+  .uk-flex-row-reverse\@l { flex-direction: row-reverse; }
+  .uk-flex-column\@l { flex-direction: column; }
+  .uk-flex-column-reverse\@l { flex-direction: column-reverse; }
+  .uk-flex-middle\@l { align-items: center; }
+  .uk-flex-left\@l { justify-content: flex-start; }
+}
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
+  // Margin
+  .uk-margin-remove-top\@xl { margin-top: 0 !important; }
+  .uk-margin-remove-bottom\@xl { margin-bottom: 0 !important; }
+
+  // Direction
+  .uk-flex-row\@xl { flex-direction: row; }
+  .uk-flex-row-reverse\@xl { flex-direction: row-reverse; }
+  .uk-flex-column\@xl { flex-direction: column; }
+  .uk-flex-column-reverse\@xl { flex-direction: column-reverse; }
+  .uk-flex-middle\@xl { align-items: center; }
+  .uk-flex-left\@xl { justify-content: flex-start; }
+}

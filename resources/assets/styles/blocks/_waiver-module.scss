@@ -1,0 +1,5 @@
+.waiver-module {
+  &__section:not(:first-child) {
+    border-top: 1px solid $gray-separator;
+  }
+}

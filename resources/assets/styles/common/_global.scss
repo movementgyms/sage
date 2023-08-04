@@ -1,0 +1,91 @@
+html {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+body {
+  @include text-body;
+
+  &:not(#tinymce) {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: $base-body-background;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.wrap {
+  flex-grow: 1;
+}
+
+.main {
+  background-color: $base-body-background;
+}
+
+button {
+  font-family: $global-font-family;
+}
+
+.container-half-width {
+  max-width: $container-max-width / 2;
+}
+
+section[class*='bg-'] + section.collapse-bg {
+  padding-top: 0;
+}
+
+.two-column {
+  column-count: 2;
+  column-gap: $global-gutter;
+}
+
+.image-full-width {
+  width: 100%;
+  height: auto;
+}
+
+address {
+  span {
+    display: block;
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+// Collapse 2 transparent bg sections to make spacing not look so large
+.uk-section:not([class*='bg-']) + .uk-section:not([class*='bg-']) {
+  padding-top: 0;
+}
+
+.border-large {
+  border-width: 10px;
+  border-style: solid;
+}
+
+.border-top-small {
+  border-top-width: 2px;
+  border-top-style: solid;
+}
+
+.border-top-large {
+  border-top-width: 10px;
+  border-top-style: solid;
+}
+
+.border-top-xsmall {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.border-bottom-xsmall {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}

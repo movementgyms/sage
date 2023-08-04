@@ -1,0 +1,29 @@
+.content-with-image {
+  &__image {
+    padding-top: 80%;
+  }
+
+  @media screen and (min-width: $breakpoint-medium) {
+    &__image {
+      padding-top: 0;
+    }
+
+    &.content-with-image-left {
+      > div {
+        flex-direction: row-reverse;
+      }
+
+      .content-with-image__content {
+        margin-right: auto;
+        // padding-right: $padding-padding;
+      }
+    }
+
+    &.content-with-image-right {
+      .content-with-image__content {
+        margin-left: auto;
+        // padding-left: $padding-padding;
+      }
+    }
+  }
+}

@@ -1,19 +1,46 @@
-/** Search form */
-.search-form {
-  @extend .form-inline;
+form {
+  label {
+    @include text-form-label;
+
+    margin: 1rem 0;
+  }
+
+  input,
+  select,
+  textarea {
+    @include text-form-input;
+
+    background-color: $gray-light;
+    border: none;
+    padding: 1rem;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  select {
+    @include text-form-select;
+
+    color: $blue-dark;
+    appearance: none;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.75 15.29"%3E%3Cg%3E%3Cpolygon fill="%23001f5b" points="13.88 15.29 0 1.41 1.41 0 13.88 12.46 26.34 0 27.75 1.41 13.88 15.29"/%3E%3C/g%3E%3C/svg%3E%0A');
+    background-position: right 1rem center;
+    background-repeat: no-repeat;
+    background-size: auto 25%;
+    padding-right: 2rem;
+  }
+
+  &.form-dark {
+    input,
+    select,
+    textarea {
+      background-color: $gray-medium;
+    }
+  }
 }
 
-.search-form label {
-  @extend .form-group;
-
-  font-weight: normal;
-}
-
-.search-form .search-field {
-  @extend .form-control;
-}
-
-.search-form .search-submit {
-  @extend .btn;
-  @extend .btn-secondary;
+form.blog-subscribe-form {
+  max-width: 415px;
 }

@@ -1,0 +1,55 @@
+@mixin list-caret {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding-left: 1em;
+
+    &::before {
+      @include icomoon($icomoon-caret-right-filled);
+
+      display: inline-block;
+      margin-left: -1em;
+      width: 1em;
+    }
+  }
+}
+
+ul.list-caret {
+  @include list-caret;
+}
+
+.list-two-column-large {
+  li {
+    @include text-heading-medium;
+
+    color: $white;
+    break-inside: avoid;
+  }
+
+  h3 {
+    @include text-heading-medium;
+
+    margin-bottom: $global-xsmall-margin;
+    color: $blue-dark;
+  }
+
+  &__content {
+    @include text-body-small;
+
+    text-transform: none;
+    color: $blue-dark;
+  }
+
+  @media screen and (min-width: $breakpoint-medium) {
+    column-count: 2;
+    column-gap: calc(2em + #{$global-gutter});
+  }
+}
+
+.list-with-separator {
+  li:not(:last-child) {
+    padding-bottom: $base-margin-vertical;
+    border-bottom: 1px solid $gray-separator;
+  }
+}

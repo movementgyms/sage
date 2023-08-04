@@ -1,0 +1,31 @@
+@mixin separator {
+  margin: 0 auto;
+  background-color: $darken-black;
+  height: 2px;
+}
+
+.separator {
+  @include separator;
+}
+
+@mixin separator-small {
+  margin: 0.5em 0;
+  background-color: $blue-dark;
+  width: 20px;
+  height: 1px;
+}
+
+.separator-small {
+  @include separator-small;
+}
+
+@mixin separator-medium {
+  margin: 0.25em 0;
+  width: 40px;
+  height: 2px;
+  border: none;
+}
+
+.separator-medium {
+  @include separator-medium;
+}

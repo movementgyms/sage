@@ -1,0 +1,30 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+@mixin icomoon($icon) {
+  content: $icon;
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icomoon-home: '\e900';
+$icomoon-angle-double-right: '\e901';
+$icomoon-angle-double-down: '\e910';
+$icomoon-arrow-right: '\e902';
+$icomoon-facebook: '\e903';
+$icomoon-instagram: '\e904';
+$icomoon-map-marker: '\e905';
+$icomoon-quote: '\e906';
+$icomoon-youtube: '\e907';
+$icomoon-caret-right: '\e908';
+$icomoon-caret-left: '\e909';
+$icomoon-caret-down: '\e90e';
+$icomoon-caret-up: '\e90f';
+$icomoon-close: '\e90a';
+$icomoon-plus: '\e90b';
+$icomoon-minus: '\e90c';
+$icomoon-caret-right-filled: '\e90d';

@@ -1,0 +1,53 @@
+.membership-rates {
+  &__locations {
+    &__content {
+      display: none;
+    }
+
+    &.is-active {
+      .cta-block-caret-down {
+        &::after {
+          @include icomoon($icomoon_caret_up);
+        }
+      }
+    }
+  }
+
+  &__selected-gym {
+    &::before {
+      content: ': ';
+    }
+  }
+
+  &__rates {
+    &__content {
+      display: none;
+    }
+
+    &__gym {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    &__selected-gym:empty {
+      display: none;
+    }
+
+    &.is-active {
+      .cta-block-caret-down {
+        &::after {
+          @include icomoon($icomoon_caret_up);
+        }
+      }
+    }
+
+    &.is-disabled {
+      .cta-block-caret-down {
+        @include cta-block-disabled;
+      }
+    }
+  }
+}

@@ -1,7 +1,16 @@
-@import "common/variables";
+/** Import helpers */
+@import 'helpers/url-friendly-color';
+
+/** Import global */
+@import 'fonts/icomoon';
+@import 'common/variables';
+@import 'common/uikit';
+@import 'common/colors';
+@import 'common/typography';
+@import 'common/global';
 
 /** Import everything from autoload */
-@import "./autoload/**/*";
+@import './autoload/**/*';
 
 /**
  * Import npm dependencies
@@ -9,17 +18,81 @@
  * Prefix your imports with `~` to grab from node_modules/
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
-// @import "~some-node-module";
 
 /** Import theme styles */
-@import "common/global";
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
+
+// Components
+@import 'components/buttons';
+@import 'components/links';
+@import 'components/overline';
+@import 'components/hamburger';
+@import 'components/blockquote';
+@import 'components/separator';
+@import 'components/hover-underline';
+@import 'components/accent';
+@import 'components/comments';
+@import 'components/forms';
+@import 'components/wp-classes';
+@import 'components/background';
+@import 'components/nav';
+@import 'components/social';
+@import 'components/uk-subnav';
+@import 'components/uk-switcher';
+@import 'components/gravity-forms';
+@import 'components/list';
+@import 'components/responsive-video';
+@import 'components/responsive-iframe';
+@import 'components/alternating-image-list';
+@import 'components/person-modal';
+@import 'components/time-list';
+@import 'components/message-banner';
+@import 'components/dropdown';
+@import 'components/text-rotator';
+@import 'components/content-blocks';
+@import 'components/location-map';
+@import 'components/redirect-modal';
+@import 'components/location-list';
+@import 'components/location-redirect-list';
+
+// Layouts
+@import 'layouts/content-wp';
+@import 'layouts/header';
+@import 'layouts/page-header';
+@import 'layouts/sidebar';
+@import 'layouts/footer';
+@import 'layouts/pages';
+@import 'layouts/posts';
+@import 'layouts/tinymce';
+
+// Pages
+@import 'pages/home';
+@import 'pages/location-home';
+@import 'pages/newsletter-subscriptions';
+@import 'pages/template-routesetting';
+@import 'pages/summer-memberships';
+
+// Blocks
+@import 'blocks/home-activities';
+@import 'blocks/location-activities';
+@import 'blocks/tabbed-content-slider';
+@import 'blocks/pricing';
+@import 'blocks/gallery';
+@import 'blocks/gallery-with-logo';
+@import 'blocks/social-scene';
+@import 'blocks/content-with-image';
+@import 'blocks/offerings';
+@import 'blocks/links-with-images-grid';
+@import 'blocks/class-types';
+@import 'blocks/class-list';
+@import 'blocks/cta-list';
+@import 'blocks/faqs';
+@import 'blocks/waiver-module';
+@import 'blocks/separator';
+@import 'blocks/gym-information';
+@import 'blocks/latest-coverage';
+@import 'blocks/membership-rates';
+@import 'blocks/benefits';
+@import 'blocks/upcoming-classes';
+@import 'blocks/directors';
+@import 'blocks/icon-grid';
+@import 'blocks/photo-grid';

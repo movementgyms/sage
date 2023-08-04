@@ -1,8 +1,10 @@
 module.exports = {
   'extends': 'stylelint-config-standard',
   'rules': {
+    'no-descending-specificity': null,
     'no-empty-source': null,
-    'string-quotes': 'double',
+    'string-quotes': 'single',
+    'comment-empty-line-before': null,
     'at-rule-no-unknown': [
       true,
       {

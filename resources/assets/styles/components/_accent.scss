@@ -1,0 +1,67 @@
+// Page accents always need to contain a single empty with a background color set
+@mixin page-accent($block1-width: 23rem, $block2-width: 14.5rem, $block3-width: 10rem) {
+  $spacing: 3rem;
+  $total-width: $block1-width + $block2-width + $block3-width + $spacing * 2;
+
+  $height: 1.5rem;
+  $height-padding: percentage($height / $total-width);
+
+  position: relative;
+  display: inline-block;
+  width: $total-width;
+  max-width: 75%;
+
+  > div {
+    position: relative;
+    height: 0;
+    padding-bottom: $height-padding;
+    width: percentage($block1-width / $total-width);
+    transform: skew(40deg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      background-color: inherit;
+      left: 100%;
+      margin-left: percentage($spacing / $block1-width);
+      height: 100%;
+      width: percentage($block2-width / $block1-width);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      background-color: inherit;
+      left: 100%;
+      margin-left: percentage(($block2-width + $spacing * 2) / $block1-width);
+      height: 100%;
+      width: percentage($block3-width / $block1-width);
+    }
+  }
+}
+
+@mixin page-accent-reversed {
+  @include page-accent(10rem, 14.5rem, 23rem);
+}
+
+.page-accent {
+  @include page-accent;
+
+  &__align-right {
+    margin-left: auto;
+  }
+
+  &__container {
+    font-size: 0;
+  }
+}
+
+.page-accent-reversed {
+  @include page-accent-reversed;
+
+  &.page-accent__align-right {
+    margin-left: auto;
+  }
+}

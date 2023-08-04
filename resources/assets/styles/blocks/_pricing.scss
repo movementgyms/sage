@@ -1,0 +1,21 @@
+.pricing {
+  &__content {
+    padding-right: $padding-padding;
+  }
+
+  &__list {
+    max-width: 50rem;
+
+    > :nth-child(n+2) {
+      margin-top: 1px;
+    }
+
+    > li {
+      padding: ($base-margin-vertical / 4) $base-margin-horizontal;
+
+      > span:last-child {
+        padding-left: $padding-padding;
+      }
+    }
+  }
+}

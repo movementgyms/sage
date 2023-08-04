@@ -1,0 +1,27 @@
+.location-activities {
+  &__image-wrapper {
+    display: flex;
+    overflow: hidden;
+    max-height: 60vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    padding-top: 137.5%;
+    width: 100%;
+  }
+
+  &__name {
+    line-height: 1;
+  }
+
+  transform: translateY($padding-small-padding * -1);
+  margin-bottom: $padding-small-padding * -1;
+
+  @media screen and (min-width: $breakpoint-medium) {
+    &__image-wrapper {
+      max-height: none;
+    }
+  }
+}

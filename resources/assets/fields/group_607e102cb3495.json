@@ -1,0 +1,40 @@
+{
+    "key": "group_607e102cb3495",
+    "title": "Routesetting (Global)",
+    "fields": [
+        {
+            "key": "field_607e1032d0097",
+            "label": "Default Routesetting Video",
+            "name": "default_routesetting_video",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "views\/template-routesetting-global.blade.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1618874438
+}

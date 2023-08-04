@@ -1,0 +1,21 @@
+.class-types {
+  &__image {
+    padding-top: 100%;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $padding-padding * 2;
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 0.2rem solid $gray-medium-dark;
+  }
+
+  &__item:nth-child(2n) {
+    > div:first-child {
+      order: 2;
+    }
+  }
+}

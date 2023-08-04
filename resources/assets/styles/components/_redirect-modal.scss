@@ -1,0 +1,21 @@
+.redirect-modal {
+  .nav-locations-dropdown {
+    .sub-menu {
+      a {
+        @include cta-nav-item;
+
+        &::after {
+          color: $yellow-medium;
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-medium-max) {
+      flex-direction: column;
+
+      > li:not(:first-child) {
+        margin-top: $margin-small-margin;
+      }
+    }
+  }
+}

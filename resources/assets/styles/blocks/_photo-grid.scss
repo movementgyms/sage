@@ -1,0 +1,34 @@
+.photo-grid {
+  padding: 2rem 2rem 1rem 2rem;
+
+  @media screen and (min-width: 425px) {
+    padding: 2rem 2rem 0;
+  }
+
+  ul.photo-row {
+    display: block;
+    margin: 0 -1rem;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 425px) {
+      display: flex;
+    }
+
+    li.photo-item {
+      flex: 1;
+      padding: 0 1rem;
+      margin-bottom: 2rem;
+
+      .image {
+        background-size: cover;
+        background-position: 50%;
+      }
+
+      img {
+        width: 100%;
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -89,3 +89,121 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+/**
+ * ACF
+ */
+add_filter(
+	'acf/settings/save_json',
+	function ( $path ) {
+		// update path
+		return realpath( get_template_directory() . '/assets/fields' );
+	}
+);
+
+add_filter(
+	'acf/settings/load_json',
+	function( $paths ) {
+		// remove original path
+		unset( $paths[0] );
+
+		// append path
+		$paths[] = realpath( get_template_directory() . '/assets/fields' );
+
+		// return
+		return $paths;
+	}
+);
+
+add_filter('acf/fields/google_map/api', function($api){
+    \App\switch_to_main_blog();
+    $api['key'] = get_field('google_maps_api_key', 'option');
+    restore_current_blog();
+
+    return $api;
+});
+
+
+/**
+ * Gravity Forms
+ */
+add_filter( 'gform_submit_button', function($input, $form) {
+    $input = str_replace('gform_button button', 'gform_button button cta-button', $input);
+    $input = str_replace('<input', '<button', $input);
+    $input = str_replace('/>', '>Submit</button>', $input);
+
+    return "
+        <div class='gform_submit_button_wrapper uk-margin-small-top cta-wrapper'>
+            $input
+        </div>";
+}, 10, 2 );
+
+// Add admin email routing
+add_filter( 'gform_notification', function($notification, $form, $entry) {
+    if ($notification['to'] === '{admin_email}') {
+        $contact_email = get_field('contact_email', 'option');
+        if (!empty($contact_email)) {
+            $notification['to'] = get_field('contact_email', 'option');
+        }
+    }
+
+    return $notification;
+}, 10, 3 );
+
+/**
+ * Add optional params to vimeo videos
+ */
+add_filter('oembed_fetch_url', function($provider, $url, $args) {
+    if ( strpos($provider, '//vimeo.com/') !== false ) {
+        unset($args['height']);
+        unset($args['width']);
+
+        $provider = add_query_arg( $args, $provider );
+    }
+    return $provider;
+} ,10, 3);
+
+/**
+ * Disable search https://gist.github.com/pradeepdotco/646410736ee5f1d7c7f7
+ */
+add_action( 'parse_query', function ( $query, $error = true ) {
+
+	if ( is_search() && !is_admin() ) {
+		$query->is_search = false;
+		$query->query_vars['s'] = false;
+		$query->query['s'] = false;
+
+		// to error
+		if ( $error == true )
+			$query->is_404 = true;
+	}
+});
+
+add_filter( 'get_search_form', function() {
+    return null;
+});
+
+add_filter('get_blogs_of_user', function( $blogs ) {
+    uasort( $blogs, function( $a, $b ) {
+        if ($a->userblog_id === 1) {
+            return -1;
+        } else if ($b->userblog_id === 1) {
+            return 1;
+        }
+
+        return strcasecmp( $a->blogname, $b->blogname );
+    });
+    return $blogs;
+});
+
+add_filter('get_site_icon_url', function($url, $size, $blog_id) {
+    if ($size <= 32) {
+        \App\switch_to_main_blog();
+        $icon = get_field('favicon_small', 'option') ? get_field('favicon_small', 'option')['sizes']['thumbnail'] : $url;
+        restore_current_blog();
+
+        return $icon;
+    }
+
+    return $url;
+}, 10, 3);

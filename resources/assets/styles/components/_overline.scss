@@ -1,0 +1,114 @@
+@mixin overline($height, $width) {
+  position: relative;
+  padding-top: $height * 0.8;
+  margin-top: $height * 0.8;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    height: $height * 0.8;
+    width: 0;
+    background-color: $base-heading-color;
+    transition: width $transition-duration;
+  }
+
+  &.overline-expanded {
+    &::after {
+      width: $width * 0.8;
+    }
+  }
+
+  &.overline-center {
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and(min-width: $breakpoint-medium) {
+    padding-top: $height * 0.9;
+    margin-top: $height * 0.9;
+
+    &::after {
+      height: $height * 0.9;
+    }
+
+    &.overline-expanded {
+      &::after {
+        width: $width * 0.9;
+      }
+    }
+  }
+
+  @media screen and(min-width: $breakpoint-large) {
+    padding-top: $height;
+    margin-top: $height;
+
+    &::after {
+      height: $height;
+    }
+
+    &.overline-expanded {
+      &::after {
+        width: $width;
+      }
+    }
+  }
+}
+
+@mixin overline-large {
+  @include overline(0.8rem, 15rem);
+}
+
+// Per Kevin's request, this is the same as the small overline now
+@mixin overline-medium {
+  @include overline(0.6rem, 10rem);
+}
+
+@mixin overline-medium-thin {
+  @include overline(0.8rem, 13rem);
+}
+
+@mixin overline-small {
+  @include overline-medium;
+}
+
+@mixin overline-small-thin {
+  @include overline(0.4rem, 10rem);
+}
+
+@mixin overline-small-thin-expanded {
+  @include overline-small-thin;
+
+  &::after {
+    width: 10rem * 0.6;
+  }
+}
+
+@mixin overline-color($color) {
+  &::after {
+    background-color: $color;
+  }
+}
+
+.overline-large {
+  @include overline-large;
+}
+
+.overline-medium {
+  @include overline-medium;
+}
+
+.overline-medium-thin {
+  @include overline-medium-thin;
+}
+
+.overline-small {
+  @include overline-small;
+}
+
+.overline-small-thin {
+  @include overline-small-thin;
+}

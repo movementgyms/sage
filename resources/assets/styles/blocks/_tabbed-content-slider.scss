@@ -1,0 +1,18 @@
+.tabbed-content-slider {
+  padding-left: $padding-small-padding;
+  padding-right: $padding-small-padding;
+
+  &__image {
+    padding-top: 100%;
+  }
+
+  @media screen and (min-width: $breakpoint-small) {
+    padding-left: 0;
+    padding-right: 0;
+
+    > * {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+}

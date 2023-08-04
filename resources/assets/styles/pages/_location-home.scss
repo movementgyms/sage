@@ -1,0 +1,26 @@
+body.template-location-home {
+  @media screen and (min-width: $breakpoint-small) {
+    .content-location-home {
+      > div:first-child {
+        padding-right: $padding-padding;
+      }
+
+      > div:last-child {
+        padding-left: $padding-padding;
+        border-left: 1px solid $blue-dark;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-medium) {
+    .content-location-home {
+      > div:first-child {
+        padding-right: $padding-large-padding;
+      }
+
+      > div:last-child {
+        padding-left: $padding-large-padding;
+      }
+    }
+  }
+}

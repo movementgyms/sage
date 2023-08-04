@@ -1,0 +1,13 @@
+.class-list {
+  &__item {
+    &__image {
+      flex: 0 0 auto !important;
+    }
+
+    &__content {
+      flex: 1 0 auto !important;
+      border-top-width: $padding-small-padding;
+      border-top-style: solid;
+    }
+  }
+}

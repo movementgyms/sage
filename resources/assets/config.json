@@ -4,12 +4,25 @@
       "./scripts/main.js",
       "./styles/main.scss"
     ],
+    "editor": [
+      "./styles/editor.scss"
+    ],
+    "hubspot": [
+      "./styles/hubspot.scss"
+    ],
+    "you-belong-here": [
+      "./styles/you-belong-here.scss"
+    ],
+    "covid-landing": [
+      "./styles/covid-landing.scss"
+    ],
     "customizer": [
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/app/themes/sage",
-  "devUrl": "http://example.test",
+  "publicPath": "/app/themes/elcap",
+  "host": "movementgyms.test",
+  "devUrl": "https://movementgyms.test",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

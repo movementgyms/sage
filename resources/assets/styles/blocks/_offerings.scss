@@ -1,0 +1,47 @@
+.offerings {
+  &__offering {
+    @media screen and (max-width: $breakpoint-xsmall-max) {
+      &:not(:first-child):not(:nth-child(3n)) {
+        border-left: 0.1rem solid $gray-light;
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: $base-margin-vertical;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-small-max) {
+      &:not(:first-child):not(:nth-child(4n)) {
+        border-left: 0.1rem solid $gray-light;
+      }
+
+      &:nth-child(n + 4) {
+        margin-top: $base-margin-vertical;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-medium-max) {
+      &:not(:first-child):not(:nth-child(5n)) {
+        border-left: 0.1rem solid $gray-light;
+      }
+
+      &:nth-child(n + 5) {
+        margin-top: $base-margin-vertical;
+      }
+    }
+
+    @media screen and (min-width: $breakpoint-large) {
+      &:not(:first-child):not(:nth-child(6n)) {
+        border-left: 0.1rem solid $gray-light;
+      }
+
+      &:nth-child(n + 6) {
+        margin-top: $base-margin-vertical;
+      }
+    }
+  }
+
+  &__number {
+    @include text-number-large;
+  }
+}

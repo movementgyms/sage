@@ -1,0 +1,19 @@
+.text-rotator {
+  position: relative;
+  display: inline-block;
+  transition: width $transition_duration;
+
+  > * {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: opacity $transition_duration;
+  }
+
+  > .text-rotator__active {
+    transition: all $transition_duration * 2;
+    position: static;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,17 @@
+.blockquote {
+  .icon-quote {
+    height: 5.5rem;
+  }
+
+  &__container {
+    border-top: 0.1rem solid $gray-medium;
+    border-bottom: 0.1rem solid $gray-medium;
+    padding-top: 3.4rem;
+    padding-bottom: 3rem;
+    margin-top: -1.6rem;
+  }
+
+  &__image {
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,28 @@
+.uk-switcher {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  > * {
+    position: relative;
+    flex: 0 0 100%;
+    transition: opacity $transition-duration;
+  }
+
+  > :not(:first-child) {
+    margin-left: -100%;
+  }
+
+  > :not(.uk-active) {
+    opacity: 0;
+    display: block;
+    z-index: 0;
+  }
+
+  > .uk-active {
+    opacity: 1;
+    display: block;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,19 @@
+.benefits {
+  &__list__item {
+    > div {
+      border-top: 1px solid $darken-black;
+    }
+
+    &:first-child > div {
+      border-top: none;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-small) {
+    &__list__item {
+      &:nth-child(2) > div {
+        border-top: none;
+      }
+    }
+  }
+}
